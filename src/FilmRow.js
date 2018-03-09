@@ -4,9 +4,6 @@ import Fave from './Fave';
 
 class FilmRow extends Component {
 
-  handleDetailsClick = (film) => {
-    console.log('Fetching details for ' + film)
-  }
 
   render() {
 
@@ -17,13 +14,13 @@ class FilmRow extends Component {
     let year = new Date(date).getFullYear();
 
     return (
-      <div className="film-row" onClick={(title) => {this.handleDetailsClick(this.props.title)}}>
+      <div className="film-row" onClick={this.props.onDetailsClick}>
         <FilmPoster url={posterUrl} title={title}/>
         <div className="film-summary">
           <h1>{title}</h1>
           <p>{year}</p>
         </div>
-        <Fave />
+        <Fave isFave={this.props.isFave} onFaveToggle={this.props.onFaveToggle} />
       </div>
     )
   }

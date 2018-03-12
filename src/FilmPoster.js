@@ -1,15 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class FilmPoster extends Component {
-  render() {
-
-    const {url, title} = this.props
-
+const FilmPoster = props => {
     return (
-      <img src={url} alt={title}/>
-
+      <img src={props.url} alt={props.title}/>
     )
-  }
 }
 
 export default FilmPoster
